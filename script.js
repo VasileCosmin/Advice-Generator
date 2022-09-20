@@ -5,7 +5,7 @@ const button =  document.querySelector('#dice')
 const url = `https://api.adviceslip.com/advice`
 
 button.addEventListener('click', () => {
-  fetch(url)
+  fetch(url, {cache: 'no-store'})
   .then(response => response.json())
   .then(data => {
     let id = data.slip.id
